@@ -2,17 +2,29 @@
 name, sellIn, quality 
 Backstage passes to a TAFKAL80ETC concert, 12, 30
 Backstage passes to a TAFKAL80ETC concert, 7, 30
+Backstage passes to a TAFKAL80ETC concert, 5, 30
 Item of Randomness, 1, 0
+Item of Randomness, 1, -1
+An item of Randomness, 1, -1
+Aged Brie, -1, 51
 
 -------- day 1 -------- 
 name, sellIn, quality 
 Backstage passes to a TAFKAL80ETC concert, 11, 31
 Backstage passes to a TAFKAL80ETC concert, 6, 32
+Backstage passes to a TAFKAL80ETC concert, 4, 33
 Item of Randomness, 0, 0
+Item of Randomness, 0, -1
+An item of Randomness, 0, -1
+Aged Brie, -2, 51
 
 -------- day 2 -------- 
 name, sellIn, quality 
 Backstage passes to a TAFKAL80ETC concert, 10, 32
 Backstage passes to a TAFKAL80ETC concert, 5, 34
+Backstage passes to a TAFKAL80ETC concert, 3, 36
 Item of Randomness, -1, 0
+Item of Randomness, -1, -1
+An item of Randomness, -1, -1
+Aged Brie, -3, 51
 
