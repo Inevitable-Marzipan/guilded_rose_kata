@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from src.item import Item
 class GildedRose(object):
 
     def __init__(self, items):
