@@ -1,7 +1,12 @@
 import pytest
 from approvaltests.approvals import verify
+from src.backstage_pass import BackstagePass
 
-from src.gilded_rose import Item, GildedRose
+from src.gilded_rose import GildedRose
+from src.item import Item
+from src.gilded_item import GildedItem
+from src.aged_brie import AgedBrie
+from src.sulfuras import Sulfuras
 
 
 def gilded_rose_simulation(items, days):
@@ -18,17 +23,17 @@ def gilded_rose_simulation(items, days):
 
 def test_items():
     items = [
-            Item(name="Aged Brie", sell_in=2, quality=0),
+            AgedBrie(name="Aged Brie", sell_in=2, quality=0),
         ]
     days = 5
     verify(gilded_rose_simulation(items, days))
 
 def test_items_high_quality():
     items = [
-            Item(name="Aged Brie", sell_in=10, quality=49),
-            Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49),
-            Item(name="Sulfuras, Hand of Ragnaros", sell_in=10, quality=49),
-            Item(name="Item of Randomness", sell_in=10, quality=49)
+            AgedBrie(name="Aged Brie", sell_in=10, quality=49),
+            BackstagePass(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49),
+            Sulfuras(name="Sulfuras, Hand of Ragnaros", sell_in=10, quality=49),
+            GildedItem(name="Item of Randomness", sell_in=10, quality=49)
         ]
     days = 3
     verify(gilded_rose_simulation(items, days))
@@ -36,23 +41,23 @@ def test_items_high_quality():
 
 def test_items_negative_sellin_high_quality():
     items = [
-            Item(name="Aged Brie", sell_in=1, quality=49),
-            Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=49),
-            Item(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=49),
-            Item(name="Item of Randomness", sell_in=1, quality=49)
+            AgedBrie(name="Aged Brie", sell_in=1, quality=49),
+            BackstagePass(name="Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=49),
+            Sulfuras(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=49),
+            GildedItem(name="Item of Randomness", sell_in=1, quality=49)
         ]
     days = 3
     verify(gilded_rose_simulation(items, days))
 
 def test_adhoc_item_combos():
     items = [
-             Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=12, quality=30),
-             Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=7, quality=30),
-             Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=30),
-             Item(name="Item of Randomness", sell_in=1, quality=0),
-             Item(name="Item of Randomness", sell_in=1, quality=-1),
-             Item(name="An item of Randomness", sell_in=1, quality=-1),
-             Item(name="Aged Brie", sell_in=-1, quality=51)
+             BackstagePass(name="Backstage passes to a TAFKAL80ETC concert", sell_in=12, quality=30),
+             BackstagePass(name="Backstage passes to a TAFKAL80ETC concert", sell_in=7, quality=30),
+             BackstagePass(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=30),
+             GildedItem(name="Item of Randomness", sell_in=1, quality=0),
+             GildedItem(name="Item of Randomness", sell_in=1, quality=-1),
+             GildedItem(name="An item of Randomness", sell_in=1, quality=-1),
+             AgedBrie(name="Aged Brie", sell_in=-1, quality=51)
     ]
     days = 3
     verify(gilded_rose_simulation(items, days))

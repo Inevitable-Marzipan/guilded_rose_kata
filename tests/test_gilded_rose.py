@@ -2,12 +2,12 @@
 import unittest
 
 from src.gilded_rose import GildedRose
-from src.item import Item
+from src.gilded_item import GildedItem
 
 
 class GildedRoseTest(unittest.TestCase):
     def test_foo(self):
-        items = [Item("foo", 0, 0)]
+        items = [GildedItem("foo", 0, 0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEqual("foo", items[0].name)
