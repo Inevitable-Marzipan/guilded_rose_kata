@@ -28,3 +28,10 @@ def test_gilded_item_quality_non_negative():
     gilded_item.update_item()
 
     assert gilded_item.quality == 0
+
+def test_gilded_item_quality_non_negative_two():
+    gilded_item = GildedItem("item", sell_in=4, quality=1)
+
+    gilded_item.update_item()
+
+    assert gilded_item.quality == 0
